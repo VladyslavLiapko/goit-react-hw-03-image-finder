@@ -1,19 +1,17 @@
-export const Searchbar = () => {
-    return (
-        <header class="searchbar">
-  <form class="form">
-    <button type="submit" class="button">
-      <span class="button-label">Search</span>
-    </button>
 
-    <input
-      class="input"
-      type="text"
-      autocomplete="off"
-      autofocus
-      placeholder="Search images and photos"
-    />
-  </form>
-</header>
-    )
-}
+import PropTypes from 'prop-types';
+import  SearchForm  from 'components/SearchForm/SearchForm';
+
+import styles from './Searchbar.module.scss';
+
+ 
+export const Searchbar = ({ onSearch }) => (
+   
+  <header className={styles.Searchbar}>
+    <SearchForm onSearch={onSearch} />
+  </header>
+);
+
+Searchbar.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
