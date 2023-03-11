@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import  SearchForm  from 'components/SearchForm/SearchForm';
 
-import styles from './Searchbar.module.scss';
+import styles from "./Searchbar.module.scss";
 
  
 export const Searchbar = ({ onSearch }) => (

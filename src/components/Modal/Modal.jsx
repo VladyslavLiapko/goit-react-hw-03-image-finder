@@ -1,17 +1,21 @@
 import { createPortal } from 'react-dom';
-import { useEffect } from 'react';
+// import React, { Component } from 'react';
+ import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Modal.module.scss';
+ import styles from './Modal.module.scss';
+const modalRoot = document.getElementById('root');
 
-const modalRoot = document.querySelector('#modal-root');
+
+
+
 
 const Modal = ({ children, onClose }) => {
   
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
 
-   
+    
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
@@ -24,7 +28,7 @@ const Modal = ({ children, onClose }) => {
     }
   };
 
- 
+  
   const handleBackdropClick = event => {
     if (event.currentTarget === event.target) {
       onClose();

@@ -4,7 +4,7 @@ import {ImageGallery} from './ImageGallery/ImageGallery';
 import {Button} from './Button/Button';
 import {Loader} from './Loader/Loader';
 import {Message} from './Message/Message';
-import Modal from './Modal/Modal';
+import  Modal  from './Modal/Modal';
 import IconButton from './IconButton/IconButton';
 import { ReactComponent as CloseIcon } from './icons/close.svg';
 
@@ -20,15 +20,15 @@ export const App = () => {
   const [largeImage, setlargeImage] = useState('');
   const [error, setError] = useState(null);
 
- 
+  
   useEffect(() => {
     if (!searchQuery) return;
 
     getImages();
-   
+    // eslint-disable-next-line
   }, [searchQuery]);
 
- 
+  
   const onChangeQuery = query => {
     setImages([]);
     setPage(1);
@@ -39,7 +39,7 @@ export const App = () => {
     setError(null);
   };
 
- 
+  
   const getImages = async () => {
     setLoading(true);
 
@@ -67,7 +67,7 @@ export const App = () => {
     setModal(true);
   };
 
-  
+ 
   const toggleModal = () => {
     setModal(prevModal => !prevModal);
   };
@@ -80,7 +80,7 @@ export const App = () => {
     });
   };
 
-  const needToShowLoadMore = images.length > 0 && images.length >= 12; // Нужны доп проверки;
+  const needToShowLoadMore = images.length > 0 && images.length >= 12; 
 
   return (
     <>
@@ -99,7 +99,7 @@ export const App = () => {
 
       {showModal && (
         <Modal onClose={toggleModal}>
-          <div className="Close-box">
+          <div id="Close-box">
             <IconButton onClick={toggleModal} aria-label="Close modal">
               <CloseIcon width="20px" height="20px" fill="#7e7b7b" />
             </IconButton>
